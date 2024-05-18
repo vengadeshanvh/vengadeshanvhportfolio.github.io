@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #loader { 
+    
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 200px;
+      height: 200px;
+         margin: -76px 0 0 -76px;
+        transform: rotateZ(45deg);
+        perspective: 1000px;
+        border-radius: 50%;
+       color: blue;
+      
+        
+      }
+        #loader:before,
+        #loader:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: inherit;
+          height: inherit;
+          border-radius: 50%;
+          transform: rotateX(70deg);
+          animation: 1s spin linear infinite;
+        }
+        #loader:after {
+          color: red;
+          transform: rotateY(70deg);
+          animation-delay: .4s;
+        }
+
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotateZ(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotateZ(360deg);
+        }
+      }
+
+      @keyframes rotateccw {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(-360deg);
+        }
+      }
+
+      @keyframes spin {
+        0%,
+        100% {
+          box-shadow: .5em 0px 0 0px currentcolor;
+        }
+        12% {
+          box-shadow: .5em .em 0 0 currentcolor;
+        }
+        25% {
+          box-shadow: 0 .5em 0 0px currentcolor;
+        }
+        37% {
+          box-shadow: -.5em .5em 0 0 currentcolor;
+        }
+        50% {
+          box-shadow: -.5em 0 0 0 currentcolor;
+        }
+        62% {
+          box-shadow: -.5em -.5em 0 0 currentcolor;
+        }
+        75% {
+          box-shadow: 0px -.5em 0 0 currentcolor;
+        }
+        87% {
+          box-shadow: .5em -.5em 0 0 currentcolor;
+        }
+      }
+   
+</style>
+<body onload="myFunction()" style="margin:0;">
+
+  <div id="loader" align="center"></div>
+  
+  <div id="myDiv" class="animate-bottom">
+    <h2>Tada!</h2>
+    <p>Some text in my newly loaded page..</p>
+  </div>
+  
+  <script>
+  var myVar;
+  
+  function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+  }
+  
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+  }
+  </script>
