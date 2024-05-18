@@ -23,7 +23,6 @@
     top: 350px;
     bottom: -300px;
     left: 50%;
-    right: 45%;
     margin-left: -3px;
     z-index: -1;
   }
@@ -84,7 +83,7 @@
     
     
   }
-  
+    
   /* The circles on the timeline */
   .container::after {
     content: '';
@@ -256,8 +255,8 @@
     .hscroll-line {
       background-color: aqua;
       bottom:30px;
-      left: -223%;
-      top: 525px;
+      left: -212.5%;
+      top: 522px;
       height: 13px;
       position: absolute;
       overflow: hidden;
